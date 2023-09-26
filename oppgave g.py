@@ -25,7 +25,6 @@ def calculate_trend(x, y):
 x_verdier = input("Skriv inn x-listen som kommadelte verdier: ")
 y_verdier = input("Skriv inn y-listen som kommadelte verdier: ")
 
-# Convert input strings to lists of floats
 x_verdier = [float(x) for x in x_verdier.split(",")]
 y_verdier = [float(y) for y in y_verdier.split(",")]
 
