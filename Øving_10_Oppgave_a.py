@@ -52,7 +52,7 @@ def les_værdata(filnavn):
 værdata=les_værdata('snoedybder_vaer_en_stasjon_dogn.csv')
 
 
-
+#print(værdata[1]["Snødybde"])
 
 
 
