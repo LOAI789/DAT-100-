@@ -20,15 +20,17 @@ def diff(liste):
 
 
 #i
+"""
 print("Antall dager over eller lik 20:",noe(lister_for_del_1.temperaturer,20))
 print("Antall dager over eller lik 25:",noe(lister_for_del_1.temperaturer,25))
 print("Antall dager over eller lik 30:",noe(lister_for_del_1.temperaturer,30))
-
+"""
 
 #j 
-
+"""
 for i in diff(lister_for_del_1.temperaturer):
     if i > 0:
         print("Stigende",i)
     else:
         print("Synkende",i)
+"""
