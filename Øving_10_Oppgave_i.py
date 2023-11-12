@@ -10,25 +10,29 @@ værdata = les_værdata(fil)
 CurrentMonth = 0
 CurrentYear = 0
 gjennomsnitt = []
-navn = [0]
+tempListe = [0]
 for i in range (len(værdata)):
+    #Skjekker hvis vi fortsatt er i samme måned og år.
     if værdata[i]["Dato"].month == CurrentMonth and værdata[i]["Dato"].year == CurrentYear:
-        navn.append(værdata[i]["Middeltemperatur"])
+        tempListe.append(værdata[i]["Middeltemperatur"])
+    #Når ny måned eller år => Finner gjennomsnitt av forrige måned og legger i liste gjennomsnitt
     elif værdata[i]["Dato"].month != CurrentMonth or værdata[i]["Dato"].year != CurrentYear:
         CurrentYear = værdata[i]["Dato"].year
         CurrentMonth = værdata[i]["Dato"].month
-        ListWithoutNone = [i for i in navn if i is not None]
-        print(ListWithoutNone)
+        ListWithoutNone = [i for i in tempListe if i is not None]
+        #Det er en måned som ikke har verdier for temp
         try:
             gjennomsnitt.append(sum(ListWithoutNone)/len(ListWithoutNone))
         except ZeroDivisionError:
             print("Ingen temperaturer")
-        navn = [værdata[i]["Middeltemperatur"]]
-        
-gjennomsnitt.pop(0)
+        tempListe = [værdata[i]["Middeltemperatur"]]
 
+
+gjennomsnitt.pop(0)
+#Bruker funksjon fra oppgave 1e til å lage en ny liste med differanse
 differanse = diff(gjennomsnitt)
-print(differanse)
+
+
 y = gjennomsnitt
 x = np.linspace(1980,2023,len(gjennomsnitt))
 x2 = np.linspace(1980,2023,len(differanse))
