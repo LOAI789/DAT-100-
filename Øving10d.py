@@ -8,7 +8,6 @@ Created on Mon Nov 13 11:29:31 2023
 
 import matplotlib.pyplot as plt
 from datetime import datetime
-from Funksjontiloppgave import noe
 from Øving_10_oppgave_a import les_værdata
 from oppgave_g import calculate_trend
 
